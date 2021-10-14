@@ -35,7 +35,7 @@ webhookの`POST`リクエストには、特別なヘッダがあります。 詳
 
 | キー                   | 種類        | 説明                                                                                                                                                                                                                                      |
 | -------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `アカウント`              | `オブジェクト`  | サブスクリプションに関連づけられた`organization`もしくあは`user`アカウント。 Organizationアカウントは、そのOrganizationの管理者のメールアドレスである`organization_billing_email`を含みます。 個人アカウントのメールアドレスを知るには、[認証されたユーザの取得](/rest/reference/users#get-the-authenticated-user)エンドポイントが利用できます。 |
+| `account`            | `オブジェクト`  | サブスクリプションに関連づけられた`organization`もしくあは`user`アカウント。 Organizationアカウントは、そのOrganizationの管理者のメールアドレスである`organization_billing_email`を含みます。 個人アカウントのメールアドレスを知るには、[認証されたユーザの取得](/rest/reference/users#get-the-authenticated-user)エンドポイントが利用できます。 |
 | `billing_cycle`      | `string`  | `yearly`もしくは`monthly`のいずれかになります。 `account`の所有者が無料のGitHubのプランを使っており、無料の{% data variables.product.prodname_marketplace %}プランを購入した場合、`billing_cycle`は`nil`になります。                                                                           |
 | `unit_count`         | `integer` | 購入したユーザ数。                                                                                                                                                                                                                               |
 | `on_free_trial`      | `boolean` | `account`が無料トライアル中の場合`true`になります。                                                                                                                                                                                                       |
@@ -49,7 +49,7 @@ webhookの`POST`リクエストには、特別なヘッダがあります。 詳
 | ------------------------ | ------------------ | ------------------------------------------------------ |
 | `id`                     | `integer`          | このプランの一意の識別子。                                          |
 | `name`                   | `string`           | プラン名。                                                  |
-| `説明`                     | `string`           | プランの説明。                                                |
+| `description`            | `string`           | プランの説明。                                                |
 | `monthly_price_in_cents` | `integer`          | このプランのセント (米国の通貨) 単位の月額。 たとえば、月額10米ドルのリストは1000セントです。   |
 | `yearly_price_in_cents`  | `integer`          | このプランのセント (米国の通貨) 単位の年額。 たとえば、月額100米ドルのリストは10000セントです。 |
 | `price_model`            | `string`           | このリストの価格モデル。 `flat-rate`、`per-unit`、`free`のいずれかです。     |

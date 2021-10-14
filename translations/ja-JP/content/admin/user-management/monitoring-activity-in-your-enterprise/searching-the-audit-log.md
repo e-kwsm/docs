@@ -27,7 +27,7 @@ AND/ORの論理演算子で区切られた値のペア:1つ以上のキーを使
 | `oauth_app_id` | アクションに関連付けられている OAuth アプリケーションの ID      |
 |       `action` | 監査されたアクションの名前                           |
 |      `user_id` | アクションによって影響を受けたユーザの ID                  |
-|          `ユーザ` | アクションによって影響を受けたユーザの名前                   |
+|         `user` | アクションによって影響を受けたユーザの名前                   |
 |      `repo_id` | アクションによって影響を受けたリポジトリの ID （妥当な場合）        |
 |         `repo` | アクションによって影響を受けたリポジトリの名前 （妥当な場合）         |
 |     `actor_ip` | アクション元の IP アドレス                         |
@@ -48,4 +48,5 @@ AND/ORの論理演算子で区切られた値のペア:1つ以上のキーを使
 {% data reusables.enterprise-accounts.access-enterprise %}
 {% data reusables.enterprise-accounts.settings-tab %}
 {% data reusables.enterprise-accounts.audit-log-tab %}
-4. 検索クエリを入力します。![検索クエリ](/assets/images/enterprise/site-admin-settings/search-query.png)
+4. 検索クエリを入力します。
+![検索クエリ](/assets/images/enterprise/site-admin-settings/search-query.png)

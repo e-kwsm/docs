@@ -37,7 +37,7 @@ body:
 | キー          | 説明                                                                                          | 必須 | 種類                              |
 |:----------- |:------------------------------------------------------------------------------------------- |:-- |:------------------------------- |
 | `name`      | Issue フォームテンプレートの名前。 Markdown テンプレートを含む他のすべてのテンプレートと異なる、一意の名前である必要があります。                    | 必須 | 文字列型                            |
-| `説明`        | A description for the issue form template, which appears in the template chooser interface. | 必須 | 文字列型                            |
+| `description` | A description for the issue form template, which appears in the template chooser interface. | 必須 | 文字列型                            |
 | `body`      | Definition of the input types in the form.                                                  | 必須 | 配列                              |
 | `assignees` | People who will be automatically assigned to issues created with this template.             | 任意 | Array or comma-delimited string |
 | `labels`    | Labels that will automatically be added to issues created with this template.               | 任意 | 文字列型                            |

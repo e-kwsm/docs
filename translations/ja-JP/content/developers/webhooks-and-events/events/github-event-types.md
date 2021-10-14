@@ -195,7 +195,7 @@ Link: <https://api.github.com/resource?page=2>; rel="next",
 | -------------- | -------- | ---------------------------------------- |
 | `action`       | `string` | 実行されたアクション. `created `になりうる。             |
 | `pull_request` | `オブジェクト` | The pull request the review pertains to. |
-| `レビュー`         | `オブジェクト` | 影響されるレビュー。                               |
+| `review`       | `オブジェクト` | 影響されるレビュー。                               |
 
 ## PullRequestReviewCommentEvent
 

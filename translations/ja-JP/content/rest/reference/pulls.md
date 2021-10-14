@@ -39,8 +39,8 @@ Pull Requestには以下のリンク関係が含まれる可能性がありま�
 | ----------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `self`            | Pull Requestの API ロケーション。                                                                                         |
 | `html`            | Pull Requestの HTML ロケーション。                                                                                        |
-| `Issue`           | Pull Requestの [Issue](/rest/reference/issues) の API ロケーション。                                                       |
-| `コメント`            | Pull Requestの [Issue コメント](/rest/reference/issues#comments) の API ロケーション。                                         |
+| `issue`           | Pull Requestの [Issue](/rest/reference/issues) の API ロケーション。                                                       |
+| `comments`        | Pull Requestの [Issue コメント](/rest/reference/issues#comments) の API ロケーション。                                         |
 | `review_comments` | Pull Requestの [レビューコメント](/rest/reference/pulls#comments) の API ロケーション。                                            |
 | `review_comment`  | Pull Requestのリポジトリで、[レビューコメント](/rest/reference/pulls#comments)の API ロケーションを構築するための[URL テンプレート](/rest#hypermedia)。 |
 | `commits`         | Pull Requestの [コミット](#list-commits-on-a-pull-request) の API ロケーション。                                               |

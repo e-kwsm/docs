@@ -26,15 +26,15 @@ Docker及びJavaScriptアクションにはメタデータファイルが必要�
 
 ## `name`
 
-**Required** The name of your action. {% data variables.product.prodname_dotcom %} displays the `name` in the **Actions** tab to help visually identify actions in each job.
+**必須** アクションの名前。{% data variables.product.prodname_dotcom %} displays the `name` in the **Actions** tab to help visually identify actions in each job.
 
-## `作者`
+## `author`
 
-**Optional** The name of the action's author.
+**Optional** アクションの作者名。
 
-## `説明`
+## `description`
 
-**Required** A short description of the action.
+**必須** アクションの短い説明。
 
 ## `inputs`
 
@@ -65,15 +65,15 @@ To access the environment variable in a Docker container action, you must pass t
 
 ### `inputs.<input_id>`
 
-**Required** A `string` identifier to associate with the input. `<input_id>`の値は、入力のメタデータのマップです。 `<input_id>`は、`inputs`オブジェクト内でユニークな識別子でなければなりません。 `<input_id>`は、文字あるいは`_`で始める必要があり、英数字、`-`、`_`しか使用できません。
+**必須** A `string` identifier to associate with the input. `<input_id>`の値は、入力のメタデータのマップです。 `<input_id>`は、`inputs`オブジェクト内でユニークな識別子でなければなりません。 `<input_id>`は、文字あるいは`_`で始める必要があり、英数字、`-`、`_`しか使用できません。
 
 ### `inputs.<input_id>.description`
 
-**Required** A `string` description of the input parameter.
+**必須** A `string` description of the input parameter.
 
 ### `inputs.<input_id>.required`
 
-**Required** A `boolean` to indicate whether the action requires the input parameter. パラメーターが必須の場合は`true`に設定してください。
+**必須** A `boolean` to indicate whether the action requires the input parameter. パラメーターが必須の場合は`true`に設定してください。
 
 ### `inputs.<input_id>.default`
 
@@ -99,11 +99,11 @@ outputs:
 
 ### `outputs.<output_id>`
 
-**Required** A `string` identifier to associate with the output. `<output_id>`の値は、出力のメタデータのマップです。 `<output_id>`は、`outputs`オブジェクト内でユニークな識別子でなければなりません。 `<output_id>`は、文字あるいは`_`で始める必要があり、英数字、`-`、`_`しか使用できません。
+**必須** A `string` identifier to associate with the output. `<output_id>`の値は、出力のメタデータのマップです。 `<output_id>`は、`outputs`オブジェクト内でユニークな識別子でなければなりません。 `<output_id>`は、文字あるいは`_`で始める必要があり、英数字、`-`、`_`しか使用できません。
 
 ### `outputs.<output_id>.description`
 
-**Required** A `string` description of the output parameter.
+**必須** A `string` description of the output parameter.
 
 ## `outputs` for composite actions
 
@@ -209,14 +209,14 @@ runs:
 
 ### `runs.using`
 
-**Required** To use a composite action, set this to `"composite"`.
+**必須** To use a composite action, set this to `"composite"`.
 
 ### `runs.steps`
 
 {% ifversion fpt or ghes > 3.2 or ghae-issue-4853 %}
-**Required** The steps that you plan to run in this action. These can be either `run` steps or `uses` steps.
+**必須** The steps that you plan to run in this action. These can be either `run` steps or `uses` steps.
 {% else %}
-**Required** The steps that you plan to run in this action.
+**必須** The steps that you plan to run in this action.
 {% endif %}
 
 #### `runs.steps[*].run`

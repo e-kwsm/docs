@@ -132,7 +132,7 @@ Issue またはプルリクエストにコメントが追加された。
 | `issue_url`          | `string`  | Issue の HTML URL。                                                       |
 | `id`                 | `integer` | イベントの一意の識別子。                                                            |
 | `node_id`            | `string`  | イベントの[グローバルノード ID](/graphql/guides/using-global-node-ids)。              |
-| `ユーザ`                | `オブジェクト`  | この Issue についてコメントしたユーザ。                                                 |
+| `user`               | `オブジェクト`  | この Issue についてコメントしたユーザ。                                                 |
 | `created_at`         | `string`  | コメントの追加日時を示すタイムスタンプ。                                                    |
 | `updated_at`         | `string`  | コメントが更新されていない場合に、コメントの更新または作成日時を示すタイムスタンプ。                              |
 | `author_association` | `string`  | Issue のリポジトリでユーザが保持している権限。 たとえば、リポジトリの所有者がコメントを作成した場合、値は「`OWNER`」になります。 |
@@ -160,12 +160,12 @@ Issue またはプルリクエストにコメントが追加された。
 | `node_id`  | `string`           | イベントの[グローバルノード ID](/graphql/guides/using-global-node-ids)。                          |
 | `url`      | `string`           | コミットを取得する REST API URL。                                                             |
 | `html_url` | `string`           | コミットの HTML URL。                                                                     |
-| `作者`       | `オブジェクト`           | コミットの作者。                                                                            |
-| `コミッター`    | `オブジェクト`           | 作者に代わってコミットしたユーザ。                                                                   |
-| `ツリー`      | `オブジェクト`           | コミットの Git ツリー。                                                                      |
+| `author`   | `オブジェクト`           | コミットの作者。                                                                            |
+| `committer` | `オブジェクト`           | 作者に代わってコミットしたユーザ。                                                                   |
+| `tree`     | `オブジェクト`           | コミットの Git ツリー。                                                                      |
 | `message`  | `string`           | コミットメッセージ。                                                                          |
-| `親`        | `array of objects` | 親コミットのリスト。                                                                          |
-| `検証`       | `オブジェクト`           | コミットの署名の検証結果。 詳しい情報については、「[署名検証オブジェクト](/rest/reference/git#get-a-commit)」を参照してください。 |
+| `parent`   | `array of objects` | 親コミットのリスト。                                                                          |
+| `verification` | `オブジェクト`           | コミットの署名の検証結果。 詳しい情報については、「[署名検証オブジェクト](/rest/reference/git#get-a-commit)」を参照してください。 |
 | `event`    | `string`           | イベントの値は `"committed"` です。                                                           |
 
 ## connected
@@ -233,7 +233,7 @@ Issue またはプルリクエストが、別の Issue またはプルリクエ�
 | `actor`         | `オブジェクト` | イベントを生成したユーザ。                                                                                                                                                                                         |
 | `created_at`    | `string` | クロスリファレンスの追加日時を示すタイムスタンプ。                                                                                                                                                                             |
 | `updated_at`    | `string` | クロスリファレンスが更新されていない場合、クロスリファレンスの更新または作成時期を示すタイムスタンプ。                                                                                                                                                   |
-| `資料`            | `オブジェクト` | クロスリファレンスを追加した Issue またはプルリクエスト。                                                                                                                                                                      |
+| `source`        | `オブジェクト` | クロスリファレンスを追加した Issue またはプルリクエスト。                                                                                                                                                                      |
 | `source[type]`  | `string` | プルリクエストは Issue タイプのため、この値は常に `"issue"` になります。 タイムラインイベント API では、Issue またはプルリクエストによってトリガーされたクロスリファレンスイベントのみが返されます。 イベントをトリガーした Issue がプルリクエストかどうかを判断するには、`source[issue][pull_request` オブジェクトの有無を確認します。 |
 | `source[issue]` | `オブジェクト` | クロスリファレンスを追加した `issue` オブジェクト。                                                                                                                                                                        |
 | `event`         | `string` | イベントの値は `"cross-referenced"` です。                                                                                                                                                                      |
@@ -581,7 +581,7 @@ Issue またはプルリクエストが再開された。
 | -------------------- | --------- | ----------------------------------------------------------------------- |
 | `id`                 | `integer` | イベントの一意の識別子。                                                            |
 | `node_id`            | `string`  | イベントの[グローバルノード ID](/graphql/guides/using-global-node-ids)。              |
-| `ユーザ`                | `オブジェクト`  | この Issue についてコメントしたユーザ。                                                 |
+| `user`               | `オブジェクト`  | この Issue についてコメントしたユーザ。                                                 |
 | `body`               | `string`  | レビューの概要テキスト。                                                            |
 | `commit_id`          | `string`  | レビュー時のプルリクエストの最新コミットの SHA。                                              |
 | `submitted_at`       | `string`  | レビューの送信日時を示すタイムスタンプ。                                                    |

@@ -41,7 +41,7 @@ shortTitle: 設定オプション
 | [`ignore`](#ignore)                                                        |       | 特定の依存関係またはバージョンを無視する                                                 |
 | [`insecure-external-code-execution`](#insecure-external-code-execution)    |       | マニフェストファイル内でコードの実行を許可または拒否する                                         |
 | [`labels`](#labels)                                                        |       | プルリクエストに設定するラベル                                                      |
-| [`マイルストーン`](#milestone)                                                    |       | プルリクエストに設定するマイルストーン                                                  |
+| [`milestone`](#milestone)                                                  |       | プルリクエストに設定するマイルストーン                                                  |
 | [`open-pull-requests-limit`](#open-pull-requests-limit)                    |       | バージョン更新時のオープンなプルリクエスト数を制限する                                          |
 | [`pull-request-branch-name.separator`](#pull-request-branch-nameseparator) |       | プルリクエストブランチ名の区切り文字を変更する                                              |
 | [`rebase-strategy`](#rebase-strategy)                                      |       | 自動リベースを無効にする                                                         |
@@ -180,7 +180,7 @@ updates:
   | ------------- | ----------------------------------------------- | ----------------------------------------------------------------------------- |
   | `direct`      | すべて                                             | 明示的に定義されたすべての依存関係。                                                            |
   | `indirect`    | `bundler`、`pip`、`composer`、`cargo`              | 直接依存関係の依存関係 (サブ依存関係、または過渡依存関係とも呼ばれる)。                                         |
-  | `すべて`         | すべて                                             | 明示的に定義されたすべての依存関係。 `bundler`、`pip`、`composer`、`cargo` についても、直接依存関係の依存関係になります。 |
+  | `all`         | すべて                                             | 明示的に定義されたすべての依存関係。 `bundler`、`pip`、`composer`、`cargo` についても、直接依存関係の依存関係になります。 |
   | `production`  | `bundler`、`composer`、`mix`, `maven`、`npm`、`pip` | Only dependencies in the "Production dependency group".                       |
   | `development` | `bundler`、`composer`、`mix`, `maven`、`npm`、`pip` | [Development dependency group] 内の依存関係のみ。                                      |
 
@@ -743,10 +743,10 @@ updates:
 |:--------------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `type`          | レジストリのタイプを指定します。 タイプの一覧については下記をご覧ください。                                                                                                                                                                                        |
 | `url`           | このレジストリの依存関係にアクセスするために使用する URL。 プロトコルはオプションです。 指定しない場合には、`https://` が使用されます。 {% data variables.product.prodname_dependabot %} が必要に応じて末尾のスラッシュを追加または無視します。                                                                     |
-| `ユーザ名`          | {% data variables.product.prodname_dependabot %} がレジストリにアクセスするために使用するユーザ名。                                                                                                                                                    |
-| `パスワード`         | 指定したユーザのパスワードを含む {% data variables.product.prodname_dependabot %} シークレットへのリファレンス。 詳しい情報については、「[Dependabot に対して暗号化されたシークレットを管理する](/github/administering-a-repository/managing-encrypted-secrets-for-dependabot)」を参照してください。     |
+| `username`      | {% data variables.product.prodname_dependabot %} がレジストリにアクセスするために使用するユーザ名。                                                                                                                                                    |
+| `password`      | 指定したユーザのパスワードを含む {% data variables.product.prodname_dependabot %} シークレットへのリファレンス。 詳しい情報については、「[Dependabot に対して暗号化されたシークレットを管理する](/github/administering-a-repository/managing-encrypted-secrets-for-dependabot)」を参照してください。     |
 | `key`           | このレジストリへのアクセスキーを含む{% data variables.product.prodname_dependabot %}シークレットへの参照 詳しい情報については、「[Dependabot に対して暗号化されたシークレットを管理する](/github/administering-a-repository/managing-encrypted-secrets-for-dependabot)」を参照してください。          |
-| `トークン`          | このレジストリへのアクセストークンを含む {% data variables.product.prodname_dependabot %} シークレットへのリファレンス。 詳しい情報については、「[Dependabot に対して暗号化されたシークレットを管理する](/github/administering-a-repository/managing-encrypted-secrets-for-dependabot)」を参照してください。 |
+| `token`         | このレジストリへのアクセストークンを含む {% data variables.product.prodname_dependabot %} シークレットへのリファレンス。 詳しい情報については、「[Dependabot に対して暗号化されたシークレットを管理する](/github/administering-a-repository/managing-encrypted-secrets-for-dependabot)」を参照してください。 |
 | `replaces-base` | `type: python-index` となっているレジストリで、ブール値が `true` の場合、pip は、Python Package Index のベース URL (デフォルトでは `https://pypi.org/simple`) ではなく指定された URL を使用して依存関係を解決します。                                                                     |
 
 

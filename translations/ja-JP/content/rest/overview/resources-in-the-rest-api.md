@@ -300,7 +300,7 @@ This `Link` response header contains one or more [Hypermedia](/rest#hypermedia) 
 
 | 名前      | 説明                |
 | ------- | ----------------- |
-| `次`     | 結果のすぐ次のページのリンク関係。 |
+| `next`  | 結果のすぐ次のページのリンク関係。 |
 | `last`  | 結果の最後のページのリンク関係。  |
 | `first` | 結果の最初のページのリンク関係。  |
 | `prev`  | 結果の直前のページのリンク関係。  |

@@ -67,7 +67,7 @@ LDAPを設定した後、ユーザは自分のLDAPクレデンシャルでイン
 | 属性名                                              | 種類 | 説明                                                                                                                                                                                                                                                        |
 | ------------------------------------------------ | -- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Host`                                           | 必須 | LDAP のホスト。例: `ldap.example.com` あるいは `10.0.0.30`。 ホスト名が内部ネットワークからしか利用できないなら、まず{% data variables.product.product_location %}のDNSを設定してホスト名を内部のネームサーバを使って解決できるようにする必要があるかもしれません。                                                                             |
-| `ポート`                                            | 必須 | ホストの LDAP サービスが待ち受けるポート。 例：389及び636（LDAPS用）。                                                                                                                                                                                                              |
+| `Port`                                           | 必須 | ホストの LDAP サービスが待ち受けるポート。 例：389及び636（LDAPS用）。                                                                                                                                                                                                              |
 | `Encryption`                                     | 必須 | LDAP サーバーとの通信をセキュアにするために使われる暗号化の方法。 例：plain（暗号化なし）、SSL/LDAPS（最初からの暗号化）、StartTLS（接続後に暗号化通信にアップグレード）。                                                                                                                                                       |
 | `Domain search user`                             | 任意 | 認証を許可するために、サインインする他のユーザを検索する LDAP ユーザ。 これは通常、サードパーティとのインテグレーションのために特に作成されるサービスアカウントです。 `cn=Administrator,cn=Users,dc=Example,dc=com`のような完全修飾名を使ってください。 Active Directoryでは、ドメイン検索ユーザとして `[DOMAIN]\[USERNAME]`という構文（例：`WINDOWS\Administrator`）を使うこともできます。 |
 | `Domain search password`                         | 任意 | ドメイン検索ユーザのためのパスワード。                                                                                                                                                                                                                                       |
@@ -87,7 +87,7 @@ LDAPを設定した後、ユーザは自分のLDAPクレデンシャルでイン
 
 LDAP 設定中の [**Disable username and password authentication for Git operations（Git の操作でのユーザ名およびパスワード認証の無効化）**] を選択し、Git アクセスでの個人アクセストークンあるいは SSH キーの使用を強制してください。そうすれば、サーバーが LDAP 認証のリクエストで過負荷になるのを防ぐのに役に立ちます。 特にポーリングによる大量のリクエストと組み合わさると、レスポンスの遅いLDAPサーバーは頻繁にパフォーマンス問題や障害の原因となるので、この設定をおすすめします。
 
-![GItチェックボックスのためのLDAPパスワード認証の無効化](/assets/images/enterprise/management-console/ldap-disable-password-auth-for-git.png)
+![GitチェックボックスのためのLDAPパスワード認証の無効化](/assets/images/enterprise/management-console/ldap-disable-password-auth-for-git.png)
 
 このオプションが選択されると、ユーザがコマンドライン経由のGitの操作でパスワードを使おうとすると、次のようなエラーメッセージが返されます。`Password authentication is not allowed for Git operations. You must use a personal access token.`
 

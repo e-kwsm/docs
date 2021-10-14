@@ -75,7 +75,7 @@ Audit logには、{% data variables.product.product_location_enterprise %}内で
 
 | カテゴリ名  | 説明                                           |
 | ------ | -------------------------------------------- |
-| `フック`  | webhookに関連するすべてのアクティビティを含みます。                |
+| `hook` | webhookに関連するすべてのアクティビティを含みます。                |
 | `org`  | Organizationのメンバーシップに関連するすべてのアクティビティを含みます。   |
 | `repo` | Organizationが所有するリポジトリに関連するすべてのアクティビティを含みます。 |
 | `Team` | Organization内のチームに関連するすべてのアクティビティを含みます。      |

@@ -35,7 +35,7 @@ topics:
 
 | 属性名    | 種類 | 説明                                                       |
 | ------ | -- | -------------------------------------------------------- |
-| `ユーザ名` | 必須 | {% data variables.product.prodname_ghe_server %} のユーザ名 |
+| `username` | 必須 | {% data variables.product.prodname_ghe_server %} のユーザ名 |
 
 ## CASの設定
 {% warning %}

@@ -1,6 +1,6 @@
 ---
-title: Using workflow templates
-shortTitle: Using templates
+title: ワークフローテンプレートの使用
+shortTitle: テンプレートの使用
 intro: '{% data variables.product.product_name %} provides workflow templates for a variety of languages and tooling.'
 product: '{% data reusables.gated-features.actions %}'
 redirect_from:
@@ -29,7 +29,7 @@ topics:
 
 You can also create your own workflow templates to share with your organization. For more information, see "[Creating workflow templates](/actions/learn-github-actions/creating-workflow-templates)."
 
-## Using workflow templates
+## ワークフローテンプレートの使用
 
 Anyone with write permission to a repository can set up {% data variables.product.prodname_actions %} workflows for CI/CD or other automation.
 

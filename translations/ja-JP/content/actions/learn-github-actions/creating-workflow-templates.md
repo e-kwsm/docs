@@ -1,6 +1,6 @@
 ---
-title: Creating workflow templates
-shortTitle: Creating templates
+title: ワークフローテンプレートの作成
+shortTitle: ワークフローテンプレートの作成
 intro: Learn how you can create workflow templates to help people in your team add new workflows more easily.
 redirect_from:
   - /actions/configuring-and-managing-workflows/sharing-workflow-templates-within-your-organization

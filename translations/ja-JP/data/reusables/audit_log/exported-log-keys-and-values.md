@@ -4,7 +4,7 @@
 | ------------------- | ------------------------------------------------------------------------------ |
 | `action`            | team.create                                                                    |
 | `actor`             | octocat                                                                        |
-| `ユーザ`               | codertocat                                                                     |
+| `user`              | codertocat                                                                     |
 | `org`               | octo-org                                                                       |
 | `repo`              | octo-org/documentation                                                         |
 | `created_at`        | 1429548104000 (タイムスタンプは Epoch からの経過時間をミリ秒で示します。)                               |

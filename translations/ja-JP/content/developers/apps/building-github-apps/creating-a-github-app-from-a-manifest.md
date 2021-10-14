@@ -63,7 +63,7 @@ GitHub App Manifest フローを実装するには、以下の 3 つのステッ
  | `redirect_url`        | `string`           | ユーザがマニフェストから GitHub App の作成を開始した後にリダイレクトする完全な URL。{% ifversion fpt or ghae-next or ghes > 3.0 %}
  | `callback_urls`       | `array of strings` | インストールの承認後にリダイレクトする完全な URL。 コールバック URL を最大 10 個指定できます。{% else %}
  | `callback_url`        | `string`           | インストールの承認後にリダイレクトする完全な URL。{% endif %}
- | `説明`                  | `string`           | GitHub App の説明。                                                                                                                                        |
+ | `description`         | `string`           | GitHub App の説明。                                                                                                                                        |
  | `public`              | `boolean`          | GitHub App を公開する場合には `true` に、アプリケーションの所有者のみがアクセスできるようにするには `false` を設定。                                                                               |
  | `default_events`      | `array`            | GitHub App がサブスクライブする[イベント](/webhooks/event-payloads)のリスト。                                                                                             |
  | `default_permissions` | `オブジェクト`           | GitHub App が必要とする[権限](/rest/reference/permissions-required-for-github-apps)のセット。 オブジェクトのフォーマットでは、キーの権限名 (`issues` など) と、値のアクセスタイプ (`write` など) を使用します。 |

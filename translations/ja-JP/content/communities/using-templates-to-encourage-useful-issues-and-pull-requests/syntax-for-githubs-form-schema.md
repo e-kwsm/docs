@@ -62,7 +62,7 @@ topics:
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -- | ---- | ----------------------------------------------- | ----------------------------------------------- |
 | `type`        | 定義する要素のタイプ。                                                                                                                                                                   | 必須 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | <ul><li>`checkboxes`</li><li>`dropdown`</li><li>`input`</li><li>`markdown`</li><li>`textarea`</li></ul>                       |
 | `id`          | The identifier for the element, except when `type` is set to `markdown`. {% data reusables.form-schema.id-must-be-unique %} 指定されている場合、`id` は URL クエリパラメータの事前入力のフィールドの正規識別子です。 | 任意 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
-| `属性`          | 要素のプロパティを定義するキー/値ペアのセット。                                                                                                                                                      | 必須 | ハッシュ | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
+| `attributes`  | 要素のプロパティを定義するキー/値ペアのセット。                                                                                                                                                      | 必須 | ハッシュ | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
 | `validations` | 要素に制約を設定するキー/値ペアのセット。                                                                                                                                                         | 任意 | ハッシュ | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
 
 以下のタイプのフォーム要素から選択できます。 各タイプには、固有の属性と検証があります。
@@ -72,7 +72,7 @@ topics:
 | [`markdown`](#markdown)     | ユーザに追加のコンテキストを提供するためにフォームに表示されるが、**未送信**のマークダウンテキスト。 |
 | [`textarea`](#textarea)     | 複数行のテキストフィールド。                                       |
 | [`input`](#input)           | 単一行のテキストフィールド。                                       |
-| [`ドロップダウン`](#dropdown)      | ドロップダウンメニュー。                                         |
+| [`dropdown`](#dropdown)      | ドロップダウンメニュー。                                         |
 | [`checkboxes`](#checkboxes) | チェックボックスのセット。                                        |
 
 ### `markdown`
@@ -95,7 +95,7 @@ topics:
 
 {% endtip %}
 
-#### サンプル
+#### 例
 
 ```YAML{:copy}
 body:
@@ -117,8 +117,8 @@ body:
 
 | キー            | 説明                                                                                          | 必須 | 種類   | デフォルト                                           | 有効な値                                                                                                                                                                    |
 | ------------- | ------------------------------------------------------------------------------------------- | -- | ---- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ラベル`         | 予想されるユーザ入力の簡単な説明。これもフォームに表示されます。                                                            | 必須 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
-| `説明`          | フォームに表示される、コンテキストまたはガイダンスを提供するテキスト領域の説明。                                                    | 任意 | 文字列型 | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
+| `label`       | 予想されるユーザ入力の簡単な説明。これもフォームに表示されます。                                                            | 必須 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
+| `description`   | フォームに表示される、コンテキストまたはガイダンスを提供するテキスト領域の説明。                                                    | 任意 | 文字列型 | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
 | `placeholder` | 空のときにテキスト領域に表示される半透明のプレースホルダ。                                                               | 任意 | 文字列型 | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
 | `value`       | テキスト領域に事前入力されているテキスト。                                                                       | 任意 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
 | `render`      | 値が指定されている場合、送信されたテキストはコードブロックにフォーマットされます。 このキーを指定すると、添付ファイルや Markdown 編集のためにテキスト領域が拡張されません。 | 任意 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% data variables.product.prodname_dotcom %} に知られている言語。 詳しい情報については、[言語の YAML ファイル](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)を参照してください。 |
@@ -132,7 +132,7 @@ body:
 |    |    |    |    |       |      |
 {% data reusables.form-schema.required-key %}
 
-#### サンプル
+#### 例
 
 ```YAML{:copy}
 body:
@@ -161,8 +161,8 @@ body:
 
 | キー            | 説明                                      | 必須 | 種類   | デフォルト                                           | 有効な値                                            |
 | ------------- | --------------------------------------- | -- | ---- | ----------------------------------------------- | ----------------------------------------------- |
-| `ラベル`         | 予想されるユーザ入力の簡単な説明。これもフォームに表示されます。        | 必須 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
-| `説明`          | フォームに表示される、コンテキストまたはガイダンスを提供するフィールドの説明。 | 任意 | 文字列型 | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
+| `label`       | 予想されるユーザ入力の簡単な説明。これもフォームに表示されます。        | 必須 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
+| `description`  | フォームに表示される、コンテキストまたはガイダンスを提供するフィールドの説明。 | 任意 | 文字列型 | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
 | `placeholder` | 空のときにフィールドにレンダリングされる半透明のプレースホルダ。        | 任意 | 文字列型 | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
 | `value`       | フィールドに事前に入力されているテキスト。                   | 任意 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
 
@@ -175,7 +175,7 @@ body:
 |    |    |    |    |       |      |
 {% data reusables.form-schema.required-key %}
 
-#### サンプル
+#### 例
 
 ```YAML{:copy}
 body:
@@ -199,8 +199,8 @@ body:
 
 | キー         | 説明                                                 | 必須 | 種類     | デフォルト                                           | 有効な値                                            |
 | ---------- | -------------------------------------------------- | -- | ------ | ----------------------------------------------- | ----------------------------------------------- |
-| `ラベル`      | フォームに表示される、予想されるユーザ入力の簡単な説明。                       | 必須 | 文字列型   | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
-| `説明`       | フォームに表示される、追加のコンテキストまたはガイダンスを提供するドロップダウンの説明。       | 任意 | 文字列型   | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
+| `label`    | フォームに表示される、予想されるユーザ入力の簡単な説明。                       | 必須 | 文字列型   | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
+| `description` | フォームに表示される、追加のコンテキストまたはガイダンスを提供するドロップダウンの説明。       | 任意 | 文字列型   | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
 | `multiple` | ユーザが複数のオプションを選択できるかどうかを指定します。                      | 任意 | 論理値    | false                                           | {% octicon "dash" aria-label="The dash icon" %}
 | `options`  | ユーザが選択できるオプションの配列。 空にすることはできず、すべての選択肢を区別する必要があります。 | 必須 | 文字列の配列 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
 
@@ -213,7 +213,7 @@ body:
 |    |    |    |    |       |      |
 {% data reusables.form-schema.required-key %}
 
-#### サンプル
+#### 例
 
 ```YAML{:copy}
 body:
@@ -240,14 +240,14 @@ body:
 
 | キー        | 説明                                                  | 必須 | 種類   | デフォルト                                           | 有効な値                                            |
 | --------- | --------------------------------------------------- | -- | ---- | ----------------------------------------------- | ----------------------------------------------- |
-| `ラベル`     | フォームに表示される、予想されるユーザ入力の簡単な説明。                        | 任意 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
-| `説明`      | フォームに表示されるチェックボックスのセットの説明。 Markdown フォーマットをサポートします。 | 任意 | 文字列型 | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
+| `label`   | フォームに表示される、予想されるユーザ入力の簡単な説明。                        | 任意 | 文字列型 | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
+| `description` | フォームに表示されるチェックボックスのセットの説明。 Markdown フォーマットをサポートします。 | 任意 | 文字列型 | 空の文字列                                           | {% octicon "dash" aria-label="The dash icon" %}
 | `options` | ユーザが選択できるチェックボックスの配列。 構文については、以下を参照してください。          | 必須 | 配列   | {% octicon "dash" aria-label="The dash icon" %} | {% octicon "dash" aria-label="The dash icon" %}
 
 {% data reusables.form-schema.options-syntax %}
 {% data reusables.form-schema.required-key %}
 
-#### サンプル
+#### 例
 
 ```YAML{:copy}
 body:

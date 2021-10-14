@@ -13,10 +13,10 @@ versions:
   ghae: '*'
 topics:
   - SSH
-shortTitle: Generate new SSH key
+shortTitle: 新しい SSH 鍵の生成
 ---
 
-## About SSH key generation
+## SSH 鍵生成について
 
 If you don't already have an SSH key, you must generate a new SSH key to use for authentication. If you're unsure whether you already have an SSH key, you can check for existing keys. For more information, see "[Checking for existing SSH keys](/github/authenticating-to-github/checking-for-existing-ssh-keys)."
 
@@ -42,7 +42,7 @@ If you don't want to reenter your passphrase every time you use your SSH key, yo
   ```
   {% note %}
 
-  **注釈:** Ed25519 アルゴリズムをサポートしないレガシーシステムを使用している場合は、以下を使用します。
+  **注釈:** Ed25519 アルゴリズムをサポートしていないレガシーシステムを使用している場合は、以下を使用します。
   ```shell
    $ ssh-keygen -t rsa -b 4096 -C "<em>your_email@example.com</em>"
   ```

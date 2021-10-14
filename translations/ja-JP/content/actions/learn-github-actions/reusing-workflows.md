@@ -1,6 +1,6 @@
 ---
-title: Reusing workflows
-shortTitle: Reusing workflows
+title: ワークフローの再利用
+shortTitle: ワークフローの再利用
 intro: Learn how to avoid duplication when creating a workflow by reusing existing workflows.
 miniTocMaxHeadingLevel: 3
 versions:
@@ -84,7 +84,7 @@ on:
 
 For details of the syntax for defining inputs and secrets, see [on.workflow_call.inputs](/actions/reference/workflow-syntax-for-github-actions#onworkflow_callinputs) and [on.workflow_call.secrets](/actions/reference/workflow-syntax-for-github-actions#onworkflow_callsecrets).
 
-### Example reusable workflow
+### 再利用可能なワークフローの例
 
 This reusable workflow file named `workflow-B.yml` (we'll refer to this later) takes an input string and a secret from the caller workflow and uses them in an action.
 
@@ -114,7 +114,7 @@ jobs:
 ```
 {% endraw %}
 
-## Calling a reusable workflow
+## 再利用可能なワークフローの呼び出し
 
 You call a reusable workflow by using the `uses` keyword. Unlike when you are using actions within a workflow, you call reusable workflows directly within a job, and not from within job steps.
 

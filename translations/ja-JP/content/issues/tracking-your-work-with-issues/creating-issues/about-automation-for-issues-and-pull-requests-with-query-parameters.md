@@ -32,7 +32,7 @@ If you create an invalid URL using query parameters, or if you don’t have the 
 | `title`     | `https://github.com/octo-org/octo-repo/issues/new?labels=bug&title=New+bug+report` は、"bug" というラベルと "New bug report" というタイトルを付けて Issue を作成します。                                                                  |
 | `labels`    | `https://github.com/octo-org/octo-repo/compare/master...pull-request-test?quick_pull=1&labels=bug` は、`master` ブランチと `pull-request-test` ブランチを比較して、"bug" というラベルを付けてプルリクエストを作成します。                               |
 | `template`  | `https://github.com/octo-org/octo-repo/issues/new?template=issue_template.md` は、ボディにテンプレートを付けて Issue を作成します。                                                                                                       |
-| `マイルストーン`   | `https://github.com/octo-org/octo-repo/issues/new?milestone=testing+milestones` は、"testing milestones" というマイルストーンを持たせて Issue を作成します。                                                                               |
+| `milestone` | `https://github.com/octo-org/octo-repo/issues/new?milestone=testing+milestones` は、"testing milestones" というマイルストーンを持たせて Issue を作成します。                                                                               |
 | `assignees` | `https://github.com/octo-org/octo-repo/issues/new?assignees=octocat` は、Issue を作成して @octocat に割り当てます。                                                                                                               |
 | `projects`  | `https://github.com/octo-org/octo-repo/issues/new?title=Bug+fix&projects=octo-org/1` は、"Bug fix" というタイトルを付けて Issue を作成し、それを Organization のプロジェクトボード 1 に追加します。                                                  |
 

@@ -11,7 +11,7 @@ versions:
   ghae: '*'
 topics:
   - SSH
-shortTitle: Check for existing SSH key
+shortTitle: 既存の SSH キーの確認
 ---
 
 {% data reusables.ssh.key-type-support %}

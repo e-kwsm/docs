@@ -1,7 +1,7 @@
 ---
-title: Expressions
-shortTitle: Expressions
-intro: You can evaluate expressions in workflows and actions.
+title: 式
+shortTitle: 式
+intro: ワークフローとアクションで式を評価できます。
 product: '{% data reusables.gated-features.actions %}'
 versions:
   fpt: '*'
@@ -13,7 +13,7 @@ miniTocMaxHeadingLevel: 3
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
-## About expressions
+## 式について
 
 プログラムでワークフローファイルの変数を設定したり、コンテキストにアクセスするために、式を利用できます。 式で使えるのは、リテラル値、コンテキストへの参照、関数の組み合わせです。 リテラル、コンテキストへの参照、および関数を組み合わせるには、演算子を使います。 For more information about contexts, see "[Contexts](/actions/learn-github-actions/contexts)."
 

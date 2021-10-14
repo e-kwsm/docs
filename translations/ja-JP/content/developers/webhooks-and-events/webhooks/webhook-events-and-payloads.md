@@ -407,7 +407,7 @@ Activity related to a comment in a discussion. For more information, see "[Using
 | キー       | 種類       | 説明                                                                                                            |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------- |
 | `action` | `string` | 実行されたアクション。 `created`、`edited`、`deleted` のいずれかを指定可。                                                           |
-| `コメント`   | `オブジェクト` | The [`discussion comment`](/graphql/guides/using-the-graphql-api-for-discussions#discussioncomment) resource. |
+| `comment` | `オブジェクト` | The [`discussion comment`](/graphql/guides/using-the-graphql-api-for-discussions#discussioncomment) resource. |
 {% data reusables.webhooks.discussion_desc %}
 {% data reusables.webhooks.repo_desc_graphql %}
 {% data reusables.webhooks.org_desc_graphql %}
@@ -602,7 +602,7 @@ Activity related to a comment in a discussion. For more information, see "[Using
 | キー                     | 種類       | 説明                                                  |
 | ---------------------- | -------- | --------------------------------------------------- |
 | `action`               | `string` | 実行されたアクション. `created`、`edited`、`deleted` のいずれかを指定可。 |
-| `ラベル`                  | `オブジェクト` | ラベルが追加された。                                          |
+| `label`                | `オブジェクト` | ラベルが追加された。                                          |
 | `changes`              | `オブジェクト` | アクションが `edited` の場合のラベルへの変更。                        |
 | `changes[name][from]`  | `string` | アクションが`edited`だった場合、以前のバージョンの名前。                    |
 | `changes[color][from]` | `string` | アクションが `edited` の場合の以前のバージョンの色。                     |
@@ -696,7 +696,7 @@ GitHub Marketplace の購入に関連するアクティビティ。 {% data reus
 | --------- | --------- | ------------------------------------------------------------------------------------------------------------ |
 | `action`  | `string`  | 実行されたアクション。 `deleted` を指定可。                                                                                  |
 | `hook_id` | `integer` | 変更された webhook の ID。                                                                                          |
-| `フック`     | `オブジェクト`  | 変更された webhook。 これには、webhook のタイプ (リポジトリ、Organization、ビジネス、アプリケーション、または GitHub Marketplace) に基づいて異なるキーが含まれます。 |
+| `hook`    | `オブジェクト`  | 変更された webhook。 これには、webhook のタイプ (リポジトリ、Organization、ビジネス、アプリケーション、または GitHub Marketplace) に基づいて異なるキーが含まれます。 |
 {% data reusables.webhooks.repo_desc %}
 {% data reusables.webhooks.org_desc %}
 {% data reusables.webhooks.sender_desc %}
@@ -743,7 +743,7 @@ GitHub Marketplace の購入に関連するアクティビティ。 {% data reus
 | キー           | 種類       | 説明                                                                                                                                                        |
 | ------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `action`     | `string` | 実行されたアクション. Can be one of:{% ifversion ghes or ghae %} `created`,{% endif %} `deleted`, `renamed`, `member_added`, `member_removed`, or `member_invited`. |
-| `招待`         | `オブジェクト` | アクションが `member_invited` の場合、ユーザへの招待またはメール。                                                                                                                |
+| `invitation` | `オブジェクト` | アクションが `member_invited` の場合、ユーザへの招待またはメール。                                                                                                                |
 | `membership` | `オブジェクト` | ユーザと Organization 間のメンバーシップ。  アクションが `member_invited` の場合は存在しません。                                                                                         |
 {% data reusables.webhooks.org_desc %}
 {% data reusables.webhooks.app_desc %}
@@ -818,7 +818,7 @@ GitHub Marketplace の購入に関連するアクティビティ。 {% data reus
 | キー    | 種類        | 説明                                                                         |
 | ----- | --------- | -------------------------------------------------------------------------- |
 | `id`  | `integer` | ページビルドの一意の識別子。                                                             |
-| `ビルド` | `オブジェクト`  | [GitHub Pages ビルドのリスト](/rest/reference/repos#list-github-pages-builds) 自体。 |
+| `build` | `オブジェクト`  | [GitHub Pages ビルドのリスト](/rest/reference/repos#list-github-pages-builds) 自体。 |
 {% data reusables.webhooks.repo_desc %}
 {% data reusables.webhooks.org_desc %}
 {% data reusables.webhooks.app_desc %}
@@ -844,7 +844,7 @@ GitHub Marketplace の購入に関連するアクティビティ。 {% data reus
 | -------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `zen`          | `string`  | GitHub zen のランダムな文字列。                                                                                                                                                                                                                                                                                              |
 | `hook_id`      | `integer` | ping をトリガーした webhook の ID。                                                                                                                                                                                                                                                                                         |
-| `フック`          | `オブジェクト`  | [webhook 設定](/rest/reference/repos#get-a-repository-webhook)。                                                                                                                                                                                                                                                      |
+| `hook`         | `オブジェクト`  | [webhook 設定](/rest/reference/repos#get-a-repository-webhook)。                                                                                                                                                                                                                                                      |
 | `hook[app_id]` | `integer` | 新しい {% data variables.product.prodname_github_app %} を登録すると、{% data variables.product.product_name %} は登録時に指定した **webhook URL** に ping イベントを送信します。 イベントには、アプリケーションの[認証](/apps/building-integrations/setting-up-and-registering-github-apps/about-authentication-options-for-github-apps/)に必要な `app_id` が含まれています。 |
 {% data reusables.webhooks.repo_desc %}
 {% data reusables.webhooks.org_desc %}
@@ -1278,9 +1278,9 @@ GitHub Marketplace の購入に関連するアクティビティ。 {% data reus
 | `id`         | `integer` | ステータスの一意の識別子。                                                                                                 |
 | `sha`        | `string`  | コミット SHA。                                                                                                     |
 | `state`      | `string`  | 新しい状態。 `pending`、`success`、`failure`、`error` のいずれかを指定可。                                                       |
-| `説明`         | `string`  | オプションの人間可読の説明がステータスに追加。                                                                                       |
+| `description` | `string`  | オプションの人間可読の説明がステータスに追加。                                                                                       |
 | `target_url` | `string`  | ステータスに追加されたオプションのリンク。                                                                                         |
-| `ブランチ`       | `array`   | ステータスの SHA を含むブランチオブジェクトの配列。 各ブランチには特定の SHA が含まれていますが、SHA がブランチの先頭である場合とそうでない場合があります。 配列には最大 10 個のブランチが含まれます。 |
+| `branches`   | `array`   | ステータスの SHA を含むブランチオブジェクトの配列。 各ブランチには特定の SHA が含まれていますが、SHA がブランチの先頭である場合とそうでない場合があります。 配列には最大 10 個のブランチが含まれます。 |
 {% data reusables.webhooks.repo_desc %}
 {% data reusables.webhooks.org_desc %}
 {% data reusables.webhooks.app_desc %}
@@ -1290,7 +1290,7 @@ GitHub Marketplace の購入に関連するアクティビティ。 {% data reus
 
 {{ webhookPayloadsForCurrentVersion.status }}
 
-## Team
+## team
 
 {% data reusables.webhooks.team_short_desc %}
 
@@ -1304,7 +1304,7 @@ GitHub Marketplace の購入に関連するアクティビティ。 {% data reus
 | キー                                              | 種類        | 説明                                                                                                                                                                |
 | ----------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `action`                                        | `string`  | 実行されたアクション. `created`、 `deleted`、`edited`、`added_to_repository`、`removed_from_repository` のいずれかを指定可。                                                              |
-| `Team`                                          | `オブジェクト`  | Team 自体。                                                                                                                                                          |
+| `team`                                          | `オブジェクト`  | Team 自体。                                                                                                                                                          |
 | `changes`                                       | `オブジェクト`  | アクションが `edited` の場合の Team への変更。                                                                                                                                   |
 | `changes[description][from]`                    | `string`  | アクションが `edited` の場合、以前のバージョンの説明。                                                                                                                                  |
 | `changes[name][from]`                           | `string`  | アクションが`edited`だった場合、以前のバージョンの名前。                                                                                                                                  |
@@ -1312,7 +1312,7 @@ GitHub Marketplace の購入に関連するアクティビティ。 {% data reus
 | `changes[repository][permissions][from][admin]` | `boolean` | アクションが `edited` の場合の、リポジトリに対する以前のバージョンの Team メンバーの `admin` 権限。                                                                                                    |
 | `changes[repository][permissions][from][pull]`  | `boolean` | アクションが `edited` の場合の、リポジトリに対する以前のバージョンの Team メンバーの `pull` 権限。                                                                                                     |
 | `changes[repository][permissions][from][push]`  | `boolean` | アクションが `edited` の場合の、リポジトリに対する以前のバージョンの Team メンバーの `push` 権限。                                                                                                     |
-| `リポジトリ`                                         | `オブジェクト`  | アクションが `added_to_repository`、`removeed_from_repository`、`edited` の場合の、Team の範囲に追加または削除されたリポジトリ。 `edited` アクションの場合、`repository` には、リポジトリに対する Team の新しい権限レベルも含まれます。 |
+| `repository`                                    | `オブジェクト`  | アクションが `added_to_repository`、`removeed_from_repository`、`edited` の場合の、Team の範囲に追加または削除されたリポジトリ。 `edited` アクションの場合、`repository` には、リポジトリに対する Team の新しい権限レベルも含まれます。 |
 {% data reusables.webhooks.org_desc %}
 {% data reusables.webhooks.sender_desc %}
 
@@ -1334,7 +1334,7 @@ GitHub Marketplace の購入に関連するアクティビティ。 {% data reus
 
 | キー     | 種類       | 説明                                                                          |
 | ------ | -------- | --------------------------------------------------------------------------- |
-| `Team` | `オブジェクト` | 変更された [Team](/rest/reference/teams)。  **注釈:** 古いイベントではペイロードに含まていれない場合があります。 |
+| `team` | `オブジェクト` | 変更された [Team](/rest/reference/teams)。  **注釈:** 古いイベントではペイロードに含まていれない場合があります。 |
 {% data reusables.webhooks.repo_desc %}
 {% data reusables.webhooks.org_desc %}
 {% data reusables.webhooks.app_desc %}

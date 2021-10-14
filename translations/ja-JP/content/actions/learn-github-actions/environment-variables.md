@@ -69,9 +69,9 @@ You can also use the {% ifversion fpt or ghes > 2.22 or ghae %}`GITHUB_ENV` envi
 | `GITHUB_REF`         | ワークフローをトリガーしたブランチまたはタグref。 たとえば、`refs/heads/feature-branch-1`です。 イベントタイプのブランチもタグも利用できない場合、変数は存在しません。                                                                                                                                                                                                       |
 | `GITHUB_HEAD_REF`    | Pull Requestのイベントに対してのみ設定されます。 headブランチの名前です。                                                                                                                                                                                                                                                              |
 | `GITHUB_BASE_REF`    | Pull Requestのイベントに対してのみ設定されます。 ベースブランチの名前です。                                                                                                                                                                                                                                                               |
-| `GITHUB_SERVER_URL`  | {% data variables.product.product_name %} サーバーの URL を返します。 For example: `https://{% data variables.product.product_url %}`.                                                                                                                                                                                |
-| `GITHUB_API_URL`     | API URL を返します。 For example: `{% data variables.product.api_url_code %}`.                                                                                                                                                                                                                                   |
-| `GITHUB_GRAPHQL_URL` | グラフ QL API の URL を返します。 For example: `{% data variables.product.graphql_url_code %}`.                                                                                                                                                                                                                      |
+| `GITHUB_SERVER_URL`  | {% data variables.product.product_name %} サーバーの URL を返します。 たとえば: `https://{% data variables.product.product_url %}`.                                                                                                                                                                                |
+| `GITHUB_API_URL`     | API URL を返します。 たとえば: `{% data variables.product.api_url_code %}`.                                                                                                                                                                                                                                   |
+| `GITHUB_GRAPHQL_URL` | グラフ QL API の URL を返します。 たとえば: `{% data variables.product.graphql_url_code %}`.                                                                                                                                                                                                                      |
 | `RUNNER_NAME`        | {% data reusables.actions.runner-name-description %}
 | `RUNNER_OS`          | {% data reusables.actions.runner-os-description %}
 | `RUNNER_TEMP`        | {% data reusables.actions.runner-temp-directory-description %}
@@ -89,6 +89,6 @@ You can also use the {% ifversion fpt or ghes > 2.22 or ghae %}`GITHUB_ENV` envi
 
 ## 環境変数の命名規則
 
-カスタム環境変数を設定する場合、接頭辞の `GITHUB_` が付いた上記のデフォルトの環境変数名を使用することはできません。 これらのデフォルトの環境変数のいずれかの値をオーバーライドしようとすると、割り当ては無視されます。
+カスタム環境変数を設定する場合、接頭辞の `GITHUB_` が付いた上記のデフォルトの環境変数名を使用することはできません。 これらのデフォルトの環境変数のいずれかの値をオーバーライドしようとすると、代入は無視されます。
 
 ファイルシステム上の場所を指すように設定した新しい環境変数がある場合は、`_PATH`サフィックスを指定する必要があります。 デフォルトの変数`HOME`と`GITHUB_WORKSPACE`は、「home」および「workspace」という言葉で最初から場所であることがわかっているため、この規則の例外です。

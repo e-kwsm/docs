@@ -1,6 +1,6 @@
 ---
 title: SSH について
-intro: 'SSH プロトコルを利用すれば、リモートのサーバーやサービスに接続し、認証を受けられます。 SSH キーを使用すると、アクセスのたびにユーザ名と個人アクセストークンを入力することなく {% data variables.product.product_name %} に接続できます。'
+intro: 'SSH プロトコルを利用すれば、リモートのサーバーやサービスに接続し、認証を受けられます。 SSH 鍵を使用すると、アクセスのたびにユーザ名と個人アクセストークンを入力しなくても {% data variables.product.product_name %} に接続できます。'
 redirect_from:
   - /articles/about-ssh
   - /github/authenticating-to-github/about-ssh

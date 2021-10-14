@@ -84,7 +84,7 @@ curl -L -u <em>username</em>:<em>token</em> http(s)://<em>hostname</em>/stafftoo
 |              `id` | ユーザまたはOrganization のアカウント ID           |
 |           `login` | アカウントのログイン名                            |
 |           `email` | アカウントのプライマリメールアドレス                     |
-|             `ロール` | アカウントがアドミンか一般ユーザか                      |
+|            `role` | アカウントがアドミンか一般ユーザか                      |
 |      `suspended?` | アカウントが停止されているか                         |
 |  `last_logged_ip` | 最後にアカウントにログインしたときの IP アドレス             |
 |           `repos` | アカウントが所有しているリポジトリの数                    |

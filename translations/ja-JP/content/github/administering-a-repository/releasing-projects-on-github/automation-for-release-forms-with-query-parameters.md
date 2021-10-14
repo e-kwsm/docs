@@ -21,7 +21,7 @@ topics:
 
 | クエリパラメータ     | サンプル                                                                                                                                          |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `タグ`         | `https://github.com/octo-org/octo-repo/releases/new?tag=v1.0.1` で "v1.0.1" という名前のタグに基づいてリリースが作成されます。                                          |
+| `tag`        | `https://github.com/octo-org/octo-repo/releases/new?tag=v1.0.1` で "v1.0.1" という名前のタグに基づいてリリースが作成されます。                                          |
 | `target`     | `https://github.com/octo-org/octo-repo/releases/new?target=release-1.0.1` で "release-1.0.1" ブランチへの最新のコミットに基づくリリースが作成されます。                     |
 | `title`      | `https://github.com/octo-org/octo-repo/releases/new?tag=v1.0.1&title=octo-1.0.1` で "v1.0.1" という名前のタグに基づいて "octo-1.0.1" という名前のリリースが作成されます。 |
 | `body`       | `https://github.com/octo-org/octo-repo/releases/new?body=Adds+widgets+support` でリリースボディに "Adds widget support" という説明を持つリリースが作成されます。           |

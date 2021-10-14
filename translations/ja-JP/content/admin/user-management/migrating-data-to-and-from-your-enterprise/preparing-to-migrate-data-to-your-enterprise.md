@@ -59,10 +59,10 @@ shortTitle: Prepare to migrate data
 
 | `model_name`   | `source_url`                                           | `target_url`                                           | `recommended_action` |
 | -------------- | ------------------------------------------------------ | ------------------------------------------------------ | -------------------- |
-| `ユーザ`          | `https://example-gh.source/octocat`                    | `https://example-gh.target/octocat`                    | `map`                |
-| `Organization` | `https://example-gh.source/octo-org`                   | `https://example-gh.target/octo-org`                   | `map`                |
-| `リポジトリ`        | `https://example-gh.source/octo-org/widgets`           | `https://example-gh.target/octo-org/widgets`           | `rename`             |
-| `Team`         | `https://example-gh.source/orgs/octo-org/teams/admins` | `https://example-gh.target/orgs/octo-org/teams/admins` | `マージ`                |
+| `user`         | `https://example-gh.source/octocat`                    | `https://example-gh.target/octocat`                    | `map`                |
+| `organization` | `https://example-gh.source/octo-org`                   | `https://example-gh.target/octo-org`                   | `map`                |
+| `repository`   | `https://example-gh.source/octo-org/widgets`           | `https://example-gh.target/octo-org/widgets`           | `rename`             |
+| `team`         | `https://example-gh.source/orgs/octo-org/teams/admins` | `https://example-gh.target/orgs/octo-org/teams/admins` | `マージ`                |
 
 *conflicts.csv*の各行には以下の情報があります。
 
@@ -83,7 +83,7 @@ shortTitle: Prepare to migrate data
 | `map`           | ソースからのデータがターゲット上の既存のデータで置き換えられます。                          | Users、organizations、repositories |
 | `rename`        | ソースからのデータは名前が変更されてターゲットにコピーされます。                           | Users、organizations、repositories |
 | `map_or_rename` | ターゲットが存在する場合、そのターゲットにマップします。 そうでない場合はインポートされたモデルの名前を変更します。 | ユーザ                              |
-| `マージ`           | ソースからのデータはターゲット上の既存のデータと組み合わされます。                          | Team                             |
+| `merge`         | ソースからのデータはターゲット上の既存のデータと組み合わされます。                          | Team                             |
 
 ***conflicts.csv* ファイルを見直し、[`ghe-migrator audit`](/enterprise/admin/guides/migrations/reviewing-migration-data) を使って適切なアクションがとられることを確認するよう強くお勧めします。**問題がないようであれば、「[Enterprise へのデータの移行](/enterprise/admin/guides/migrations/applying-the-imported-data-on-github-enterprise-server)」に進むことができます。
 
@@ -96,19 +96,19 @@ shortTitle: Prepare to migrate data
 
 | `model_name` | `source_url`                        | `target_url`                        | `recommended_action` |
 | ------------ | ----------------------------------- | ----------------------------------- | -------------------- |
-| `ユーザ`        | `https://example-gh.source/octocat` | `https://example-gh.target/octocat` | `map`                |
+| `user`       | `https://example-gh.source/octocat` | `https://example-gh.target/octocat` | `map`                |
 
 このユーザをターゲット上の他のユーザにマップさせることができます。 `octocat`が実際にはターゲットの`monalisa`だということを知っているとしましょう。 *conflicts.csv*の `target_url`を`monalisa`を指すように変更できます。
 
 | `model_name` | `source_url`                        | `target_url`                         | `recommended_action` |
 | ------------ | ----------------------------------- | ------------------------------------ | -------------------- |
-| `ユーザ`        | `https://example-gh.source/octocat` | `https://example-gh.target/monalisa` | `map`                |
+| `user`       | `https://example-gh.source/octocat` | `https://example-gh.target/monalisa` | `map`                |
 
 もう1つの例として、もしも`octo-org/widgets`リポジトリをターゲットインスタンス上では`octo-org/amazing-widgets`に名前を変えたいとすれば、`target_url`を`octo-org/amazing-widgets`に、`recommend_action`を`rename`に変更してください。
 
 | `model_name` | `source_url`                                 | `target_url`                                         | `recommended_action` |
 | ------------ | -------------------------------------------- | ---------------------------------------------------- | -------------------- |
-| `リポジトリ`      | `https://example-gh.source/octo-org/widgets` | `https://example-gh.target/octo-org/amazing-widgets` | `rename`             |
+| `repository` | `https://example-gh.source/octo-org/widgets` | `https://example-gh.target/octo-org/amazing-widgets` | `rename`             |
 
 ### カスタムマッピングの追加
 
@@ -128,7 +128,7 @@ $ ghe-migrator audit -m user -g <em>MIGRATION_GUID</em> > users.csv
 
 | `model_name` | `source_url`                        | `target_url`                         | `state`  |
 | ------------ | ----------------------------------- | ------------------------------------ | -------- |
-| `ユーザ`        | `https://example-gh.source/octocat` | `https://example-gh.target/monalisa` | `rename` |
+| `user`       | `https://example-gh.source/octocat` | `https://example-gh.target/monalisa` | `rename` |
 
 同じプロセスは、カスタムマッピングをサポートする各レコードのマッピングを作成するために使うことができます。 詳しい情報については[レコードに可能なマッピング上のテーブル](/enterprise/admin/guides/migrations/reviewing-migration-conflicts#possible-mappings-for-each-record-type)を参照してください。
 

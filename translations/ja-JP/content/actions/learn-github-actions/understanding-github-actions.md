@@ -1,6 +1,6 @@
 ---
-title: Understanding GitHub Actions
-shortTitle: Understanding GitHub Actions
+title: GitHub Actions について学ぶ
+shortTitle: GitHub Actions について学ぶ
 intro: 'Learn the basics of {% data variables.product.prodname_actions %}, including core concepts and essential terminology.'
 redirect_from:
   - /github/automating-your-workflow-with-github-actions/core-concepts-for-github-actions

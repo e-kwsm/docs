@@ -28,7 +28,7 @@ versions:
 | [`commit-message`](#commit-message)                                        |       | コミットメッセージの環境設定                         |
 | [`ignore`](#ignore)                                                        |       | 特定の依存関係またはバージョンを無視する                   |
 | [`labels`](#labels)                                                        |       | プルリクエストに設定するラベル                        |
-| [`マイルストーン`](#milestone)                                                    |       | プルリクエストに設定するマイルストーン                    |
+| [`milestone`](#milestone)                                                  |       | プルリクエストに設定するマイルストーン                    |
 | [`open-pull-requests-limit`](#open-pull-requests-limit)                    |       | バージョン更新時のオープンなプルリクエスト数を制限する            |
 | [`pull-request-branch-name.separator`](#pull-request-branch-nameseparator) |       | プルリクエストブランチ名の区切り文字を変更する                |
 | [`rebase-strategy`](#rebase-strategy)                                      |       | 自動リベースを無効にする                           |
@@ -160,7 +160,7 @@ updates:
   | ------------- | ----------------------------------------------- | ----------------------------------------------------------------------------- |
   | `direct`      | すべて                                             | 明示的に定義されたすべての依存関係。                                                            |
   | `indirect`    | `bundler`、`pip`、`composer`、`cargo`              | 直接依存関係の依存関係 (サブ依存関係、または過渡依存関係とも呼ばれる)。                                         |
-  | `すべて`         | すべて                                             | 明示的に定義されたすべての依存関係。 `bundler`、`pip`、`composer`、`cargo` についても、直接依存関係の依存関係になります。 |
+  | `all`         | すべて                                             | 明示的に定義されたすべての依存関係。 `bundler`、`pip`、`composer`、`cargo` についても、直接依存関係の依存関係になります。 |
   | `production`  | `bundler`、`composer`、`mix`, `maven`、`npm`、`pip` | [Product dependency group] 内の依存関係のみ。                                          |
   | `development` | `bundler`、`composer`、`mix`, `maven`、`npm`、`pip` | [Development dependency group] 内の依存関係のみ。                                      |
 
